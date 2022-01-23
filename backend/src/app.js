@@ -28,8 +28,8 @@ app.use(express.json());
 
 
 // Routes - Rutas que la app de React podrá utilizar
-app.get('/users', (req, res) => res.send('Users Routes'));
-app.get('/notes', (req, res) => res.send('Notes Routes'));
+app.get('/api/users', (req, res) => res.send('Users Routes'));
+app.get('/api/notes', (req, res) => res.send('Notes Routes'));
 
 
 
