@@ -13,7 +13,7 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",

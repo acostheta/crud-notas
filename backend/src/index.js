@@ -1,4 +1,5 @@
 // archivo que arranca el servidor
+require('dotenv').config();
 
 const app = require("./app");
 require('./database');
