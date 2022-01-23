@@ -2,6 +2,7 @@
 
 /* Aquí comienza el inicio del servidor */
 const express = require('express');
+const cors = require('cors');
 const app = express(); /* Todo el serv está en esta variable. */
 
 
@@ -18,15 +19,17 @@ app.set('port', process.env.PORT || 4000);
 
 
 // Middlewares
+app.use(cors()); 
+// Cada que llegue una peticion al serv, podra enviar y recibir datos.
+
+// Como este servidor manejará API (JSON), debemos usar un método json desde express.
+app.use(express.json()); 
 
 
 
-
-
-
-// Routes
-
-
+// Routes - Rutas que la app de React podrá utilizar
+app.get('/users', (req, res) => res.send('Users Routes'));
+app.get('/notes', (req, res) => res.send('Notes Routes'));
 
 
 
