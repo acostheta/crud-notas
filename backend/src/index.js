@@ -1,9 +1,11 @@
 // archivo que arranca el servidor
 
 const app = require("./app");
+require('./database');
 
-function main(){
-    app.listen(4000, () => console.log('server on port 4000'));
+async function main(){
+    await app.listen(4000);
+   console.log('Listen on port 4000');
 
 }
 
