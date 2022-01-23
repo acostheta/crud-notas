@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb://localhost/notas-crud'
+const URI = process.env.MONGODB_URI;
 
 mongoose.connect(URI), {
     newUrlParser: true,
