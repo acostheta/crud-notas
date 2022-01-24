@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { getNotes, createNote } = require('../controllers/notes.controller');
+const { getNotes, createNote, getNote, deleteNote, updateNote } = require('../controllers/notes.controller');
 
 // Hagamos que desde nuestro enrutador, escuchamos una ruta '/'
 router.route('/')
@@ -9,8 +9,8 @@ router.route('/')
 
 // Este tiene la diferencia de que se usa para peticiones a elementos específicos distinguidos por id.
 router.route('/:id')
-    .get()
-    .put()
-    .delete();
+    .get(getNote)
+    .put(updateNote)
+    .delete(deleteNote);
 
 module.exports = router;
