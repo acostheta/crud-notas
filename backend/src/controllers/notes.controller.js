@@ -7,5 +7,14 @@ notesCtrl.getNotes = async (req, res) => {
     res.json(notes)
 };
 
+notesCtrl.createNote = async (req, res) => {
+    const {title, content, date, author} = req.body;
+    const newNote = new Note ({
+        title, content, date, author
+    })
+    await newNote.save();
+    res.json({"message": "all fine"})
+}
+
 
 module.exports = notesCtrl;

@@ -1,11 +1,11 @@
 const { Router } = require('express');
 const router = Router();
-const { getNotes } = require('../controllers/notes.controller');
+const { getNotes, createNote } = require('../controllers/notes.controller');
 
 // Hagamos que desde nuestro enrutador, escuchamos una ruta '/'
 router.route('/')
     .get(getNotes)
-    .post((req, res) => res.json({"message": "POST request"}));
+    .post(createNote);
 
 // Este tiene la diferencia de que se usa para peticiones a elementos específicos distinguidos por id.
 router.route('/:id')

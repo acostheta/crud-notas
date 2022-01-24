@@ -4,6 +4,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express(); /* Todo el serv está en esta variable. */
+const bodyParser = require("body-parser")
 
 
 //  Settings
@@ -30,6 +31,7 @@ app.use(express.json());
 // Routes - Rutas que la app de React podrá utilizar
 app.use('/api/notes', require('./routes/notes'));
 app.use('/api/users', require('./routes/users'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
