@@ -1,16 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import NotesList from './components/NotesList';
 import Navigation from './components/Navigation';
 import CreateNote from './components/CreateNote';
 import CreateUser from './components/CreateUser';
+;
+
 
 
 function App() {
