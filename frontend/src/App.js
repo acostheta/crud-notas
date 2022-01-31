@@ -9,9 +9,6 @@ import NotesList from './components/NotesList';
 import Navigation from './components/Navigation';
 import CreateNote from './components/CreateNote';
 import CreateUser from './components/CreateUser';
-;
-
-
 
 function App() {
   return (
