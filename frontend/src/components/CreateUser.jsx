@@ -28,7 +28,13 @@ export default class CreateUser extends Component {
     e.preventDefault();
     const res = await  axios.post('http://localhost:4000/api/users', {
       "username": this.state.username
-    })
+    });
+    this.setState({'username': ''});
+    this.getUsers();
+  }
+
+  deleteUser = async (id) => {
+    axios.delete('http://localhost:4000/api/users/' +  id); 
     this.getUsers();
   }
 
@@ -42,6 +48,7 @@ export default class CreateUser extends Component {
                 <div className="form-group">
                   <input type="text" className="form-control"
                     onChange={this.onChangeUsername}
+                    value={this.state.username}
                     />
                 </div>
                   <button type="submit" className="btn btn-primary mt-2">
@@ -56,6 +63,7 @@ export default class CreateUser extends Component {
                 <li
                   className="list-group-item list-group-item-action"
                   key={user._id}
+                  onDoubleClick={ () => this.deleteUser(user._id) }
                 >
                   {
                     user.username /* con user me estoy refiriendo al user de arriba*/

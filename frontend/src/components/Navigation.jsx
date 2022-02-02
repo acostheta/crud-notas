@@ -27,22 +27,22 @@ export default function Navigation() {
           </button>
         </div>
         <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-          <ul className="navbar-nav ml-auto align-left">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item active ">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link d-flex align-items-center">
                 <BiNotepad />
                 Notes
               </Link>
             </li>
             <li className="nav-item">
               
-              <Link to="/create" className="nav-link">
+              <Link to="/create" className="nav-link d-flex align-items-center">
               <AiOutlineFileAdd />
                 Create Note
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/user" className="nav-link">
+              <Link to="/user" className="nav-link d-flex align-items-center">
               <AiOutlineUser />
                 Create User
               </Link>
